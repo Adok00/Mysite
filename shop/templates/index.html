@@ -1,10 +1,121 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница с Каталогом</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .header-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .menu {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .menu ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .container {
+            display: flex;
+            margin: 20px;
+        }
+
+        .catalog {
+            width: 25%;
+            padding: 10px;
+            background-color: #f4f4f4;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .catalog ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .catalog ul li {
+            margin-bottom: 10px;
+        }
+
+        .blog {
+            width: 75%;
+            padding: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer .logo {
+            height: 50px;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <img src="header-image.jpg" alt="Header Image" class="header-image">
+        <nav class="menu">
+            <ul>
+                <li><a href="#catalog">Каталог</a></li>
+                <li><a href="#blog">Блог</a></li>
+                <li><a href="#footer">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+{% block content %}
+    <div class="container">
+        <aside class="catalog">
+            <h2>Каталог и Фильтры</h2>
+            <ul>
+                <li><a href="#">Фильтр 1</a></li>
+                <li><a href="#">Фильтр 2</a></li>
+                <li><a href="#">Фильтр 3</a></li>
+            </ul>
+        </aside>
 
+        <main class="blog">
+            <h1>Добро пожаловать в наш блог!</h1>
+            <p>Здесь вы найдете интересную информацию.</p>
+        </main>
+    </div>
+{% endblock %}
+    <footer id="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Мой Сайт</p>
+            <img src="logo.png" alt="Логотип" class="logo">
+        </div>
+    </footer>
+
+    <script>
+
+    </script>
 </body>
 </html>
